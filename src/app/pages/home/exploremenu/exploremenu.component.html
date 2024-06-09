@@ -1,0 +1,56 @@
+<div class="relative bottom-[10rem]">
+  <h1 class="font-bold text-5xl mb-10 text-left">Explore our menu</h1>
+  <p class="w-[50%] text-black">
+    Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your
+    cravings and elevate your dining experience, one delicious meal at a time.
+  </p>
+  <div class="flex flex-wrap justify-between items-center mt-10">
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(1)">
+      <img src="{{ salad }}" alt="salad" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Salad</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(2)">
+      <img src="{{ rolls }}" alt="rolls" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Wraps</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(3)">
+      <img src="{{ deserts }}" alt="deserts" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Cakes</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(4)">
+      <img src="{{ sandwich }}" alt="sandwich" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Sandwiches</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(5)">
+      <img src="{{ pizza }}" alt="pizza" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Pizzas</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(6)">
+      <img src="{{ pureVeg }}" alt="pureveg" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">PureVeg</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(7)">
+      <img src="{{ pasta }}" alt="pasta" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Pasta</h1>
+    </div>
+    <div class="flex flex-col items-center mb-4" (click)="selectCategory(8)">
+      <img src="{{ noodles }}" alt="noodles" class="w-[8rem] h-[8rem] object-cover rounded-full hover:border-[5px] border-orange-500 transition-all duration-150 cursor-pointer" />
+      <h1 class="text-xl font-bold mt-2">Noodles</h1>
+    </div>
+  </div>
+  <p class="border-[1px] mt-10"></p>
+</div>
+
+<div *ngIf="items.length > 0">
+  <!-- <h2 class="text-3xl font-bold mt-10">Items</h2> -->
+  <div class="flex flex-wrap justify-between">
+    <div *ngFor="let item of items" class="border-[1px] rounded-lg overflow-hidden shadow-lg m-4 w-[23%]">
+      <img [src]="item.photoUrl" [alt]="item.itemId" class="h-[20rem] w-full object-cover" />
+      <div class="p-4">
+        <h1 class="text-3xl font-bold mb-2">{{ item.itemName }}</h1>
+        <p class="text-black mb-4">{{ item.description }}</p>
+        <p class="font-semibold text-orange-500 text-xl">{{ item.price }} LEI</p>
+      </div>
+    </div>
+  </div>
+</div>
