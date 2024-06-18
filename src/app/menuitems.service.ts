@@ -9,6 +9,9 @@ export class MenuitemsService {
   constructor(private http: HttpClient) {}
 
   getItemsByCategory(categoryId: number): Observable<any[]> {
-    return this.http.get<any[]>(`https://localhost:5001/api/Item/GetItemsByCategory?categoryId=${categoryId}`);
+    // return this.http.get<any[]>(`https://localhost:5001/api/Item/GetItemsByCategory?categoryId=${categoryId}`);
+    return this.http.get<any[]>(
+      `https://restaurantappbackend.azurewebsites.net/api/Item/GetItemsByCategory?categoryId=${categoryId}`
+    );
   }
 }

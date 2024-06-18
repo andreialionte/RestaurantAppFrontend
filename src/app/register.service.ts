@@ -13,6 +13,10 @@ export class RegisterService {
 
   registerButton(firstName: string, lastName: string, phoneNumber: string, email: string, password: string) {
     const userData = { firstName, lastName, phoneNumber, email, password }; // Ensure all fields are included
-    return this.http.post(`https://localhost:5001/Register?Email=${email}@gmail.com&Password=${password}&FirstName=${firstName}&LastName=${lastName}&PhoneNumber=${phoneNumber}`, userData);
+    // return this.http.post(`https://localhost:5001/Register?Email=${email}@gmail.com&Password=${password}&FirstName=${firstName}&LastName=${lastName}&PhoneNumber=${phoneNumber}`, userData);
+        return this.http.post(
+          `https://restaurantappbackend.azurewebsites.net/Register?Email=${email}@gmail.com&Password=${password}&FirstName=${firstName}&LastName=${lastName}&PhoneNumber=${phoneNumber}`,
+          userData
+        );
   }
 }
